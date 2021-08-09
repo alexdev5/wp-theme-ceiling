@@ -1,0 +1,55 @@
+{
+  "name": "wordpress",
+  "version": "1.0.0",
+  "description": "Wordpress for max freelance",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack serve",
+    "build": "cross-env NODE_ENV=production webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexdev5/js-vmpractice.git"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "exel"
+  ],
+  "author": "Alex Dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexdev5/js-vmpractice/issues"
+  },
+  "homepage": "https://github.com/alexdev5/js-vmpractice#readme",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.7",
+    "eslint": "^7.31.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-webpack-plugin": "^2.5.4",
+    "group-css-media-queries": "^1.4.1",
+    "group-css-media-queries-loader": "^3.0.2",
+    "mini-css-extract-plugin": "^1.6.2",
+    "optimize-css-assets-webpack-plugin": "^6.0.0",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.35.1",
+    "sass-loader": "^11.1.1",
+    "smart-grid": "^2.1.2",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "bootstrap": "^5.0.2",
+    "swiper": "^6.7.5"
+  }
+}

@@ -1,0 +1,81 @@
+.page-blog{
+  h2{
+    margin-left: 10px;
+    @include sm-block{
+      margin-left: 0;
+    }
+  }
+}
+
+.blog-grid{
+
+  .row,
+  &.row{
+    >*{
+      margin-top: 0;
+      --bs-gutter-x: 40px;
+      --bs-gutter-y: 0;
+
+      @include lg-block{
+        --bs-gutter-y: 1rem;
+        --bs-gutter-x: 1rem;
+      }
+    }
+  }
+
+  > div{
+    margin-bottom: 45px;
+    @include lg-block{
+      margin-bottom: 20px;
+    }
+    @include sm-block{
+      margin-bottom: 50px;
+    }
+  }
+  img{
+    width: 100%;
+  }
+
+  h4{
+    margin-bottom: 10px;
+  }
+
+  // Перый елемент
+  &--first{
+    .first-img{
+      @include sm-block{
+        order: 2;
+      }
+    }
+  }
+
+  // Остальные елементы
+  .item{
+    @include sm-block{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    > *{
+      @include sm-block{
+        width: 100%;
+      }
+    }
+
+    &-img{
+      margin-bottom: 10px;
+      @include sm-block{
+        order: 2;
+      }
+    }
+
+    &-text{
+      > *{
+        //margin-bottom: 10px;
+        line-height: normal;
+      }
+      .date{
+        margin-bottom: 6px;
+      }
+    }
+  }
+}

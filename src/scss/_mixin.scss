@@ -1,0 +1,9 @@
+@mixin trans($prop: all, $time: .2s, $func: linear){
+  transition: $prop $time $func;
+}
+
+@mixin alignCenter(){
+  top: 50%;
+  transform: translateY(-50%);
+}
+

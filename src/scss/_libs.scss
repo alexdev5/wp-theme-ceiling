@@ -1,0 +1,421 @@
+::-webkit-scrollbar {
+  width: 10px; /* ширина для вертикального скролла */
+}
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: #E8E8FE;
+  border-radius: 9em;
+  /*box-shadow: inset 1px 1px 10px #f3faf7;*/
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #DFDFFE;
+}
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+  display: none;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+  display: none;
+}
+
+.ai-center{
+  align-items: center;
+}
+.ai-start{
+  align-items: flex-start;
+}
+.ai-end{
+  align-items: flex-end;
+}
+.as-end{
+  align-self: flex-end;
+}
+.no-wrap{
+  flex-wrap: nowrap;
+}
+.fd-column{
+  flex-direction: column;
+}
+
+.jc-center{
+  justify-content: center;
+}
+.jc-between{
+  justify-content: space-between;
+}
+.jc-around{
+  justify-content: space-around;
+}
+.jc-end{
+  justify-content: flex-end;
+}
+
+.d-block{
+  display: block;
+}
+
+.fz-10{
+  font-size: 10px;
+}
+.fz-11{
+  font-size: 11px;
+}
+.fz-14{
+  font-size: 14px;
+}
+.fz-32{
+  font-size: 32px;
+}
+.fz-22{
+  font-size: 22px;
+  @include md-block{
+    font-size: 20px;
+  }
+}
+
+.b300{
+  font-weight: 300;
+}
+.b400{
+  font-weight: 400;
+}
+.b500{
+  font-weight: 500;
+}
+.b600{
+  font-weight: 600;
+}
+.b900{
+  font-weight: 900;
+}
+
+
+.ml-30{
+  margin-left: 30px;
+}
+.mb-16{
+  margin-bottom: 16px !important;
+}
+.mb-10{
+  margin-bottom: 10px !important;
+}
+.mb-20{
+  margin-bottom: 20px;
+}
+.mb-30{
+  margin-bottom: 30px !important;
+}
+.mb-40{
+  margin-bottom: 40px !important;
+
+  @include sm-block{
+    margin-bottom: 20px !important;
+  }
+}
+.mb0{
+  margin-bottom: 0!important;
+}
+.mb-06{
+  margin-bottom: 0.6em;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.mt-20{
+  margin-top: 20px;
+}
+.mt-30{
+  margin-top: 30px;
+}
+.mt-auto{
+  margin-top: auto;
+}
+.ml-20{
+  margin-left: 20px;
+}
+.mr-10{
+  margin-right: 10px;
+}
+.mr-20{
+  margin-right: 20px;
+}
+.mr-30{
+  margin-right: 30px;
+}
+.mr-40{
+  margin-right: 40px;
+}
+.ml-auto{
+  margin-left: auto;
+}
+
+.pb-30{
+  padding-bottom: 30px;
+  &.p1{
+    padding-bottom: 30px;
+  }
+}
+.pt-30{
+  padding-top: 30px;
+}
+
+.ta-center{
+  text-align: center;
+}
+
+.ds-none{
+  display: none !important;
+}
+
+.entry-header{
+  display: none;
+}
+
+/* Classes */
+.width-middle{
+  max-width: 600px;
+}
+
+h3, h2{
+  $offset-left: 90px;
+  position: relative;
+  color: #393E46;
+  //padding-left: $offset-left;
+  font-size: 34px;
+  font-weight: 700;
+
+  +.width-middle{
+    margin-left: $offset-left;
+    @include lg-block{
+      margin-left: 50px;
+    }
+    @include sm-block{
+      margin-left: 0;
+    }
+  }
+  +p{
+    margin-left: $offset-left;
+    @include lg-block{
+      margin-left: 50px;
+    }
+    @include sm-block{
+      margin-left: 0;
+    }
+  }
+}
+
+.pl-90{
+  padding-left: 90px;
+
+  @include lg-block{
+    padding-left: 0;
+  }
+}
+
+.block-with-header{
+  $offset-left: 90px;
+  padding-left: $offset-left;
+  @include lg-block{
+    padding-left: calc(var(--bs-gutter-x) * .5);
+  }
+
+  h3, h2{
+    padding-left: 0!important;
+    @include lg-block{
+      padding-left: 50px!important;
+    }
+    @include sm-block{
+      padding-left: 30px!important;
+    }
+
+    &:after{
+      left: -$offset-left;
+      @include lg-block{
+        left: 0;
+      }
+    }
+
+    +p{
+      margin-left: 0;
+    }
+
+  }
+}
+
+.w100-sm{
+  @include sm-block{
+    width: 100%;
+  }
+
+  > .wp-block-button__link {
+    width: 100%;
+  }
+}
+
+.ds-block{
+  display: block;
+}
+.md-block{
+  display: none;
+  @include md-block{
+    display: block;
+  }
+}
+.sm-block{
+  display: none;
+  @include sm-block{
+    display: block;
+  }
+}
+.md-none{
+  @include md-block{
+    display: none;
+  }
+}
+
+.w250{
+  width: 250px;
+  > .wp-block-button__link{
+    display: block;
+    width: 100%;
+  }
+
+  @include sm-block{
+    width: 100%;
+  }
+}
+.c-grey{
+  color: $grey;
+}
+.c-silver{
+  color: $silver !important;
+}
+
+.mt-70{
+  margin-top: 70px;
+  @include sm-block{
+    margin-top: 40px;
+  }
+}
+h2{
+  font-size: 34px;
+}
+h5{
+  font-size: 22px;
+  font-weight: 600;
+}
+.h3{
+  font-size: 28px;
+}
+.h4, h4{
+  font-size: 24px;
+  font-weight: 600;
+  display: block;
+  color: #393E46;
+
+  @include sm-block{
+    font-size: 16px;
+  }
+}
+
+/* Линия слева, как в заголовках
+*  только списком
+*/
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li{
+    display: block;
+  }
+}
+
+.ul-line-left{
+
+  @include md-block{
+    margin-bottom: 40px;
+    margin-top: 22px;
+  }
+
+  li{
+    $width: 24px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    position: relative;
+    padding-left: 20px + $width;
+
+    @include sm-block{
+      margin-bottom: 15px;
+      padding-left: 25px;
+      font-weight: 500;
+    }
+
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 1px;
+      width: $width;
+      background: #767A81;
+
+      @include lg-block{
+        width: 14px;
+      }
+    }
+  }
+}
+
+.line-left-list{
+  padding-left: calc(90px + var(--bs-gutter-x) * .5);
+
+  @include lg-block{
+    padding-left: calc(52px + var(--bs-gutter-x) * .5);
+  }
+  @include md-block{
+    padding-left: 16px;
+  }
+
+  h4{
+    $width: 24px;
+    font-size: 18px !important;
+    margin-bottom: 7px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 14px + $width;
+
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 2px;
+      width: $width;
+      background: #767A81;
+
+      @include lg-block{
+        width: 14px;
+        height: 1px;
+      }
+    }
+  }
+
+  p{
+    margin-bottom: 27px !important;
+    padding-left: 38px;
+
+    &:last-of-type(1){
+      margin-bottom: 0 !important;
+    }
+  }
+}
+.front-page{
+  .line-left-list{
+
+  }
+}

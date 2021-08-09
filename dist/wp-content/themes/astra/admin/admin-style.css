@@ -1,0 +1,269 @@
+@import url(icon-fa.css);
+/*@import "../assets/ui-kit/uikit.min.css";*/
+
+.block-editor-editor-skeleton__content{
+    background: #F2F3FA;
+}
+.wp-block-group, .wp-block-columns{
+    padding: 6px;
+}
+.editor-post-title .wp-block{
+    padding-left: 20px;
+}
+.block-editor-block-list__layout{
+
+}
+.block-editor-block-list__block:before {
+    outline: 1px solid transparent;
+    right: -4px !important;
+    left: -4px !important;
+    top: -4px !important;
+    bottom: -4px !important;
+}
+.block-editor-block-list__layout .block-editor-block-list__block.has-child-selected:before {
+    border-color: rgba(66,88,99,.4);
+    border-left: 1px solid rgba(66,88,99,.4);
+    box-shadow: none;
+}
+.edit-post-layout .interface-interface-skeleton__content{
+    background: #fff;
+}
+
+.wp-block-image .components-resizable-box__container img{
+    min-width: 150px;
+    width: auto;
+}
+figcaption{
+    font-size: 16px !important;
+    font-weight: 600;
+}
+.interface-interface-skeleton__content{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.editor-styles-wrapper{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background: #fff;
+}
+.block-editor-block-list__layout > .wp-block{
+    max-width: 100% !important;
+}
+/* Настройка отображения блоков */
+.wp-block{
+    max-width: 100% !important;
+    background: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0 0 6px rgba(0,0,0,.1);
+}
+.wp-block h1,
+.wp-block h2,
+.wp-block h3,
+.wp-block h4,
+.wp-block h5,
+.wp-block h6{
+    color: #585B5D;
+    font-weight: 500;
+}
+[data-type = 'core/button']{
+    box-shadow: none;
+}
+.block-list-appender .wp-block{
+    background: transparent ;
+}
+.editor-post-title .editor-post-title__input{
+    font-size: 2.44em;
+    text-align: left !important;
+    font-weight: 600;
+}
+/*
+.btn-blue .wp-block-button__link{
+    border-color: #1f5ba5;
+    background: #1f5ba5;
+    color: #fff;
+}
+.wp-block-button__link{
+    font-family: "Open Sans";
+    border: 1px solid #ED7AAE;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 7px 22px;
+    font-weight: normal;
+    display: inline-block;
+    color: #fff;
+    background: #ED7AAE;
+}
+.wp-block-html .block-editor-plain-text{
+    max-height: none!important;
+}
+!* Настройка блоков сторонних плагинов *!
+.edit-post-layout__metaboxes div.postbox{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background: #fff;
+}
+.postbox.acf-postbox{
+    border-left: 4px solid #448AFF;
+}
+.postbox.wpseo-metabox{
+    border-left: 4px solid #A4286A;
+}
+*/
+
+/* ---------- Настройки записей ---------- */
+.widefat td, .widefat th{
+    vertical-align: middle;
+}
+/* ---------- Настройки меню ---------- */
+.dashicons-fa-neos:before{
+    font-weight: bold !important;
+}
+#adminmenu div.dashicons-fa-neos:before,
+#adminmenu div.dashicons-fa-pills:before,
+#adminmenu div.dashicons-fa-microphone-stand:before,
+#adminmenu div.dashicons-fas-tv-retro:before{
+    color: #82C360;
+}
+#adminmenu div.dashicons-admin-generic:before,
+#adminmenu div.dashicons-welcome-widgets-menus:before{
+    color: #FFBE19;
+}
+.editor-styles-wrapper .block-editor-block-list__block,
+[data-type="core/columns"] .block-list-appender{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+/* plugins */
+.otgs-installer-notice{
+    display: none !important;
+}
+
+/* --------------- Шорткоды ---------------- */
+.shortcode{
+    /*display: inline-block;*/
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.short-tag-br{
+    background: #E29095;
+    border-radius: 5px;
+}
+.bg-light-pink{
+    background: #FCF5FA;
+}
+
+.bg-pink{
+    background: #FF7AB0;
+}
+.bg-pink-dark{
+    background: #ED7AAE;
+}
+.wp-block-columns .block-editor-block-list__layout > div{/*
+    flex-basis: auto !important;*/
+}
+/* !!!!!!!!!! Удалить на следующем проекте !!!*/
+/* Стили перекочевавшие с миофолика */
+
+.b200{
+    font-weight: 200;
+}
+.b300{
+    font-weight: 200;
+}
+.b600{
+    font-weight: 600;
+}
+.b700{
+    font-weight: 700;
+}
+.с-blue{
+     color: #598EA9;
+ }
+.с-pink{
+     color: #ED7AAE !important;
+}
+.c-white{
+     color: #fff;
+}
+
+/*
+
+.mio-notice{
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 0.88888rem;
+}
+.wp-block h3 {
+    font-size: 1.666rem;
+    font-weight: 600 !important;;
+    color: #598EA9 !important;
+}
+!*Кастомный ul с розовыми кружками*!
+
+.editor-styles-wrapper .ul-circle-pink,
+ .editor-styles-wrapper .ul-logo-pink{
+   list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: .5rem !important;
+    padding-bottom: .5rem !important;
+}
+
+.ul-circle-pink li,
+.ul-logo-pink li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0.5rem !important;
+}
+.ul-circle-pink li:last-child,
+.ul-logo-pink li:last-child{
+    margin-bottom: 0 !important;
+}
+
+.ul-circle-pink li:before,
+.ul-logo-pink li:before{
+     content: '';
+     display: block;
+     width: 12px;
+     height: 12px;
+     border-radius: 50%;
+     position: absolute;
+     top: 8px;
+     left: 0;
+     background: #ED7AAE;
+ }
+.ul-circle-pink li a,
+.ul-logo-pink li a {
+    color: #777777;
+}
+
+.ul-logo-pink li {
+    font-weight: 400;
+    padding-left: 31px;
+}
+.ul-logo-pink li:before{
+     width: 20px;
+     height: 20px;
+     top: 3px;
+     background: url("../assets/images/svg/znak spiska.svg") no-repeat center;
+}
+.wp-block-paragraph a{
+    color: #C9177E;
+}
+!* Страницы врачей *!
+
+!* Беларусь *!
+#post-7507{
+    background: rgba(237,28,36, .2);
+}
+
+!* Украина *!
+#post-8221{
+    background: rgba(65,120,237, .2);
+}
+
+#wp-admin-bar-WPML_ALS{
+   !* display: none!important;*!
+}*/

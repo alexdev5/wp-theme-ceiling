@@ -1,0 +1,292 @@
+.swiper-container{
+  padding-bottom: 48px;
+
+  @include sm-block{
+    padding-bottom: 37px;
+  }
+
+  .swiper-slide{
+    min-height: 70px;
+  }
+}
+
+.axslider-button{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+
+  @include md_block{
+    display: none;
+  }
+
+  > div{
+    background: #222831;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include trans();
+
+    &:hover{
+      background: #393E46;
+      cursor: pointer;
+    }
+  }
+  &--prev{
+
+  }
+  &--next{
+
+  }
+}
+
+.swiper-pagination{
+  position: absolute !important;
+  display: inline-block;
+  width: auto!important;
+  left: auto!important;
+  right: 0;
+  bottom: 0;
+  background: transparent!important;
+  line-height: normal;
+  height: auto!important;
+
+  @include md_block{
+    width: 100%;
+    display: flex!important;
+    left: 0 !important;
+
+  }
+  > * {
+    @include md_block{
+      flex-grow: 1;
+      width: 100%;
+    }
+  }
+
+  .swiper-pagination-bullet{
+    margin: 0 !important;
+    width: 56px;
+    height: 2px;
+    border-radius: 0;
+    background: $light-black;
+    @include trans(background);
+    transform: translateY(-1px);
+    &-active{
+      transform: translateY(0px);
+      height: 4px;
+
+      @include md_block{
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+.front-page{
+  .ceilings.portfolio-slider{
+    margin-top: 100px;
+
+    @include sm-block{
+      margin-top: 26px;
+    }
+  }
+}
+
+//
+.portfolio-slider{
+  h4{
+    font-weight: 500;
+  }
+  .swiper-slide{
+    position: relative;
+    width: 70%;
+
+    img{
+      width: 100%;
+    }
+  }
+  .slide-content{
+    color: #fff;
+    padding: 24px;
+    background: rgba(34, 40, 49, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    //align-items: center;
+    min-width: 250px;
+    min-height: 300px;
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+
+    *{
+      color: #fff;
+    }
+
+    &--header{
+      a{
+        font-size: 14px;
+        color: #EEEEEE;
+        border-bottom: 1px solid #EEEEEE;
+      }
+    }
+
+    &--text{
+      font-size: 18px;
+    }
+  }
+
+  // Слайдер портфолио
+  &.portfolio{
+    h4{
+      a{
+        @include sm-block{
+          display: none;
+        }
+      }
+    }
+    .slide-content{
+      width: 80%;
+      min-height: 110px;
+      height: auto;
+      right: 0;
+
+      @include sm-block{
+        width: 100%;
+        padding: 16px;
+        min-height: 106px;
+      }
+
+      .d-flex{
+        @include sm-block{
+          justify-content: center;
+        }
+      }
+
+      &--text{
+        @include sm-block{
+          display: none;
+        }
+      }
+
+      &--button{
+        @include sm-block{
+          margin-left: auto;
+          margin-right: auto;
+        }
+        > .button{
+          height: 44px;
+        }
+      }
+    }
+
+    .slide-content--sale{
+
+    }
+  }
+}
+
+//
+.ceilings{
+  .slide-content{
+    @include md-block{
+      right: 0;
+      min-height: 170px;
+    }
+
+    @include sm-block{
+      max-width: 180px;
+      min-width: 180px;
+    }
+
+    &--header{
+      font-size: 20px;
+      @include sm-block{
+        font-size: 14px;
+      }
+    }
+
+    &--sale{
+      @include sm-block{
+        font-size: 16px;
+      }
+    }
+  }
+
+}
+
+.portfolio{
+  .slide-content{
+    @include md-block{
+      width: 100%;
+    }
+
+    &--text{
+      @include md-block{
+        width: 100%;
+      }
+    }
+  }
+}
+//
+.sliders{
+  .swiper-slide {
+    @include sm-block{
+      width: 200px;
+    }
+  }
+
+}
+.video-slider{
+  .swiper-slide{
+    position: relative;
+    width: 500px;
+  }
+
+  .media-header{
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 10px;
+
+    @include sm-block{
+      font-size: 16px;
+      padding-bottom: 0;
+    }
+  }
+
+  .no-swiper-slide{
+    margin-bottom: 20px;
+  }
+}
+
+.portfolio-slider-mobile{
+  .swiper-slide{
+    @include sm-block(){
+      width: 280px;
+      min-height: 280px;
+    }
+  }
+}
+
+//
+.portfolio-item--image{
+  @include sm-block{
+    min-height: 280px;
+    margin-top: 0;
+
+    > .thumbnail-img{
+      min-height: 280px;
+      background: #DCDCDC;
+      img{
+        display: none;
+      }
+    }
+  }
+}
+
+
+/* Слайдер отключен */

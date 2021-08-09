@@ -1,0 +1,146 @@
+/*
+Theme Name: Child theme astra
+Template: astra
+
+Не обязательные параметры:
+Author: Alexandr Karakay
+Version: 1.0
+*/
+
+/* импортируем стили родительской темы */
+@import url("../astra/style.css");
+#primary{
+    margin: 0
+}
+/* gutenberg redeclare */
+.wp-block-column:not(:first-child){
+    margin-left: 0!important;
+}
+/*  */
+
+div.wpcf7-response-output{
+    border:none;
+}
+.entry-content > .wp-block-group > .wp-block-group__inner-container,
+.ast-breadcrumbs-wrapper{
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ast-breadcrumbs-wrapper{
+    padding-right: 11.250px;
+    padding-left: 11.250px;
+}
+.entry-content .wp-block-group{
+    padding: 0;
+}
+.has-text-align-center{
+    text-align: center;
+}
+.row>*{
+    --bs-gutter-y: 1rem;
+    --bs-gutter-x: 1rem;
+}
+.wp-block-media-text,
+.wp-block-columns{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    /*margin-top: calc(var(--bs-gutter-y) * -1) ;*/
+    margin-bottom: 1em;
+    margin-right: calc(var(--bs-gutter-x)/ -2) !important;
+    margin-left: calc(var(--bs-gutter-x)/ -2) !important;
+}
+.wp-block-media-text>*,
+.wp-block-columns>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    /*margin-top: var(--bs-gutter-y);*/
+}
+.wp-block-media-text__media,
+.wp-block-media-text__content,
+.wp-block-column{
+    flex: 1 0 0;
+}
+.wp-block-column.col,
+.wp-block-column.col-6{
+    flex-basis: auto!important;
+}
+.bg-light-blue{
+    background: #E8F2FF;
+}
+
+/* --------- */
+.list-header{
+    background: #889BD3;
+}
+.fd-column{
+    flex-direction: column;
+}
+.ai-end{
+    align-items: flex-end;
+}
+.about-alluna__img{
+    position: relative;
+}
+.about-alluna__img .img-pills{
+    position: absolute;
+    top: 21px;
+    left: -30px;
+    z-index: 1;
+}
+.about-alluna__img .img-pills:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 98%;
+    height: 96%;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,.4);
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.about-alluna__img .img-pack{
+    position: relative;
+    transform: translateX(30px);
+    z-index: 5;
+}
+.wp-block-button__link{
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.wp-block-buttons{
+    display: flex;
+}
+.wp-block-buttons > div{
+    margin-right: 10px;
+}
+.wp-block-buttons > div:last-child{
+    margin-right: 0;
+}
+
+.text-open-bottom:before,
+.text-open-bottom-js:before{
+    background: url('assets/img/arrow-bottom.svg');
+}
+
+.invalid .wpcf7-response-output{
+    display: none !important;
+}
+
+.taxonomy-page .before-line{
+    margin-top: 0!important;
+}
+.taxonomy-page .post-grid{
+    margin-bottom: 0
+}

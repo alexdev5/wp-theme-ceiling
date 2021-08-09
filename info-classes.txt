@@ -1,0 +1,20 @@
+.type-line              - элементы списка с линией
+.before-line            - заголовок с линией перед текстом
+.width-middle           - блок текста, макс. длинна 600px
+.text-container-middle  - блок текста, макс. длинна 600px
+.block-with-header      - блок для елементов с заголовком с черточкой, будет левый паддинг.
+.line-left-list -
+    h4
+    p
+h1+h2{fz:16px}
+
+.w100-sm - длинна 100% для телефонов
+.filter-dropdown - используется для фильтра на странице "Виды потолков"
+.text-open-bottom - Используется для скрытия длинного текста, при клике развертывается
+.mt-150 -
+
+[the_date] - выводит дату создания поста
+[_site_admin_email] - CF7 почта админа
+
+// Дополнительные плагины JS
+https://blog.maxgraph.ru/bolshaya-podborka-plaginov-na-chistom-js-dlya-raznykh-zadach/

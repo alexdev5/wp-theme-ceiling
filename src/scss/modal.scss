@@ -1,0 +1,192 @@
+//$light-black:
+.modal{
+  margin-top: 30px;
+}
+.modal-order{
+  .wpcf7-response-output{
+    background: #393E46!important;
+    border: none!important;
+    color: #fff;
+  }
+  .modal-content{
+    background: #393E46;
+    border: none;
+    position: relative;
+    padding: 20px;
+
+    small{
+      color: #767A81;
+    }
+  }
+  .modal-header{
+    color: #fff;
+    border: none;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+
+    h3,p{
+      width: 100%;
+      text-align: center;
+    }
+    h3{
+      color: #fff;
+      font-size: 28px;
+      font-weight: 600;
+      @include sm-block{
+        font-size: 18px;
+      }
+    }
+    p{
+      font-size: 18px;
+      margin-left: 0;
+      @include sm-block{
+        font-size: 16px;
+      }
+    }
+    .btn-close{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNiAxNicgZmlsbD0nIzc2N0E4MSc+PHBhdGggZD0nTS4yOTMuMjkzYTEgMSAwIDAxMS40MTQgMEw4IDYuNTg2IDE0LjI5My4yOTNhMSAxIDAgMTExLjQxNCAxLjQxNEw5LjQxNCA4bDYuMjkzIDYuMjkzYTEgMSAwIDAxLTEuNDE0IDEuNDE0TDggOS40MTRsLTYuMjkzIDYuMjkzYTEgMSAwIDAxLTEuNDE0LTEuNDE0TDYuNTg2IDggLjI5MyAxLjcwN2ExIDEgMCAwMTAtMS40MTR6Jy8+PC9zdmc+")
+    }
+  }
+  .modal-body{
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+
+    input{
+      border: 1px solid #767A81;
+      background: transparent;
+      color: #fff;
+      height: 56px;
+      margin-top: 30px;
+
+      @include sm-block{
+        height: 50px;
+      }
+    }
+
+    .mb-3:first-child{
+      input{
+        margin-top: 0;
+      }
+    }
+  }
+
+
+}
+
+
+/* Заказать звонок в шапке */
+.form-call-cf{
+  position: absolute;
+  display: none;
+  z-index: 100;
+  &.active{
+    display: block;
+  }
+
+  // Открылось внизу
+  &.marker-bottom{
+    .form-call:after{
+      top: auto;
+      bottom: 0;
+      transform: translateY(50%) rotate(-121deg) skewX(31deg);
+    }
+  }
+}
+
+
+.form-call{
+  /*top: 50px;
+  left: 50px;*/
+  background: #EEEEEE;
+  border: 2px solid #222831;
+  width: 330px;
+  padding: 20px 30px;
+  display: none;
+
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 39px;
+    width: 42px;
+    height: 35px;
+    background: #EEEEEE;
+    border: 2px solid #222831;
+    border-bottom: none;
+    border-right: none;
+    transform: translateY(-50%) rotate(59deg) skewX(31deg);
+  }
+
+  .btn-close{
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #222831;
+    font-size: 10px;
+    &:hover{
+      opacity: .7;
+    }
+  }
+  h5{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: normal;
+    position: relative;
+    z-index: 2;
+  }
+  p{
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #767A81;
+
+    b{
+      font-weight: 400;
+      color: #393E46;
+    }
+    &:last-child{
+      margin-bottom: 14px;
+    }
+  }
+  input{
+    width: 100%;
+    font-size: 22px;
+    padding: 6px !important;
+    user-select: none !important;
+    border: 1px solid transparent;
+  }
+  .wpcf7-not-valid{
+    border: 1px solid red;
+  }
+
+  .submit-block{
+    position: relative;
+    img{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 25%;
+    }
+  }
+
+  button, .wpcf7-submit{
+    margin-top: 16px;
+    width: 100%;
+    height: 46px;
+    font-size: 14px;
+    position: relative;
+    z-index: 3;
+  }
+  .wpcf7-not-valid-tip{
+    display: none;
+  }
+
+}
