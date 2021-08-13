@@ -15,6 +15,9 @@ function portfolio_grid( $atts ){
 		'post_type' => 'portfolio',
 		'exclude' => '',
 		'cat' => '',
+
+		'height' => '',
+		'slides_per_view' => 'auto',
 	), $atts );
 
 	$arr_atts_exclude = explode(',', $atts['exclude']);
@@ -37,15 +40,15 @@ function portfolio_grid( $atts ){
 				'operator' => 'NOT IN',
 			),
 		),
-		'paged'          => get_query_var('paged') ?: 1,
+		'paged' => get_query_var('paged') ?: 1,
 	];
 	$wp_query = new WP_Query($args);
 
 	$_count = 1;
 
 	$settings = [
-		'slidesPerView'=> get_field('slidesPerView') ?? 'auto',
-		'spaceBetween'=> get_field('spaceBetween') ?? '20px',
+		'slidesPerView'=> get_field('slidesPerView') ??  $atts['slides_per_view'],
+		'spaceBetween'=> get_field('spaceBetween') ?? '20',
 	];
 
 	// Container shortcode start

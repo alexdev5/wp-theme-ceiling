@@ -26,8 +26,8 @@ export default function () {
   });
 
   //
-  portfolioSlider();
   sliderSlider();
+  portfolioSlider();
   setPortfolioSliderMobile();
 
   /*
@@ -36,51 +36,64 @@ export default function () {
 
 
 function portfolioSlider() {
-  new Swiper('.portfolio-slider .swiper-container', {
-    slidesPerView: "auto",
-    spaceBetween: 35,
-    loop:true,
-    autoplay: {
-      delay: 3000,
-      pauseOnMouseEnter: true,
-    },
 
-    pagination: {
-      el: ".swiper-pagination",
-      clickable:true,
-      // type: "progressbar",
-    },
+  const sliders = document.querySelectorAll('.portfolio-slider .swiper-container');
 
-    navigation: {
-      nextEl: '.axslider-button--next',
-      prevEl: '.axslider-button--prev',
-    },
+  if (!sliders)
+    return;
 
-    // And if we need scrollbar
-    /*scrollbar: {
-      el: '.swiper-scrollbar',
-    },*/
-    // Responsive breakpoints
-    /*breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 20
+  //
+
+
+
+  sliders.forEach(el=>{
+    let elSetting = lib1.getJsonData(el.dataset.settings);
+
+    let data = {
+      slidesPerView: "auto",
+      spaceBetween: 35,
+      loop:true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       },
-      // when window width is >= 480px
-      480: {
-        slidesPerView: 3,
-        spaceBetween: 30
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable:true,
+        // type: "progressbar",
       },
-      // when window width is >= 640px
-      640: {
-        slidesPerView: 4,
-        spaceBetween: 40
-      }
-    },*/
+
+      navigation: {
+        nextEl: '.axslider-button--next',
+        prevEl: '.axslider-button--prev',
+      },
+      breakpoints: {
+        // when window width is >= 640px
+        720: {
+          slidesPerView: 'auto',
+          spaceBetween: 40
+        }
+      },
+    };
+
+    data.slidesPerView = elSetting.slidesPerView;
+    data.spaceBetween = elSetting.spaceBetween;
+
+    data.breakpoints['720'].slidesPerView = elSetting.slidesPerView;
+    data.breakpoints['720'].spaceBetween = elSetting.spaceBetween;
+
+    new Swiper(el, data);
   });
+
+
 }
 
+/**
+ * Post type = sliders
+ * Для кастомного типа поста
+ * */
 function sliderSlider() {
 
   let sliders = document.querySelectorAll('.sliders .swiper-container');
@@ -90,7 +103,6 @@ function sliderSlider() {
 
   sliders.forEach(el=>{
     let elSetting = lib1.getJsonData(el.dataset.settings);
-
 
     let data = {
       slidesPerView: "auto",
@@ -131,10 +143,14 @@ function sliderSlider() {
       },
     };
 
-    if (getKey(elSetting, 'slidesPerView')){
-      data.breakpoints['720'].slidesPerView = parseInt(getKey(elSetting, 'slidesPerView'));
-      data.breakpoints['576'].slidesPerView = 3;
+    let assign = Object.assign(data, elSetting);
 
+    if (getKey(elSetting, 'slidesPerView')){
+      assign.breakpoints['720'].slidesPerView = parseInt(getKey(elSetting, 'slidesPerView'));
+      assign.breakpoints['576'].slidesPerView = 3;
+    }
+    if (getKey(elSetting, 'disableOnInteraction')){
+      assign.autoplay.disableOnInteraction = getKey(elSetting, 'disableOnInteraction');
     }
 
 
@@ -150,7 +166,7 @@ function sliderSlider() {
         .removeClass('swiper-wrapper');
 
     } else{
-      new Swiper(el, data);
+      new Swiper(el, assign);
     }
 
   });

@@ -61,7 +61,7 @@ module.exports = {
     open: true,
   },
   devtool: 'source-map',
-  //devtool: isDev ? 'source-map' : false,
+  //devtool: false,
   module: {
     // Описываем лоадеры
     rules: [

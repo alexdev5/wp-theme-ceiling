@@ -45,9 +45,42 @@ foreach ($gallery->ids as $key=>$id){
 
       <div class="col-12 col-sm-6 portfolio-item--image">
          <div class="thumbnail-img">
-            <img src="<?php echo kama_thumb_src($args,  get_the_post_thumbnail_url()) ?>" alt="">
+
+             <? if (get_field('images_post')): ?>
+
+             <div class="images">
+                 <? $iteration = 1; ?>
+                 <? foreach (get_field('images_post') as $item):
+                   if ($iteration==1){
+                     $w=320; $h=400;
+                   } elseif ($iteration==2){
+                     $w=210; $h=256;
+                   } elseif ($iteration==3){
+                     $w=340; $h=210;
+                   }
+                     // 320x400
+                     // 210x256
+                     // 340x210
+                     $img = kama_thumb_src([
+                         'width'=>$w,
+                         'height'=>$h,
+                         'attach_id'=>$id,
+                         'src '=>$item['url'],
+                     ]);
+                 ?>
+                    <div class="images-item">
+                        <img src="<?= $img ?>" alt="<?= $item['alt'] ?>" width="<?= $w ?>" height="<?= $h ?>">
+                    </div>
+                 <? $iteration++; endforeach; ?>
+             </div>
+
+             <? endif; ?>
+             <div class="img-one">
+                 <img src="<?php echo kama_thumb_src($args,  get_the_post_thumbnail_url()) ?>" alt="">
+             </div>
          </div>
       </div>
    </div>
 
 </div>
+

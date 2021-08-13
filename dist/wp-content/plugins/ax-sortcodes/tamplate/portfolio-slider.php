@@ -1,8 +1,8 @@
 
 <?
-$args = [
-	'width' => 873,
-	'height' => (int)$atts['height'] ?? 373,
+$_args = [
+	'width' => $atts['slides_per_view']=='auto' ? 873: 1320,
+	'height' => (int)$atts['height']>0 ? (int)$atts['height']:373,
 	'crop ' => true,
 	'post_id  ' => get_the_ID(),
 ];
@@ -22,8 +22,8 @@ $argsMobile = [
 
 ?>
 <!-- Slides -->
-<div class="swiper-slide">
-    <img data-src="<?php echo kama_thumb_src($args,  get_the_post_thumbnail_url()) ?>" data-src-mobile="<?php echo kama_thumb_src($argsMobile,  get_the_post_thumbnail_url()) ?>" alt="" class="swiper-lazy" width="800" height="<?= $args['height'] ?>">
+<div class="swiper-slide swiper-slide<?= valueIf($atts['slides_per_view'], '-'.$atts['slides_per_view']) ?>">
+    <img data-src="<?php echo kama_thumb_src($_args,  get_the_post_thumbnail_url()) ?>" data-src-mobile="<?php echo kama_thumb_src($argsMobile,  get_the_post_thumbnail_url()) ?>" alt="" class="swiper-lazy" width="<?= $_args['width'] ?>" height="<?= $_args['height'] ?>">
    <div class="swiper-lazy-preloader"></div>
 
     <div class="slide-content">

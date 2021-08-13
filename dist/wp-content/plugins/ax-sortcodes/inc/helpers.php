@@ -1,9 +1,12 @@
 <?
 
-function var_dump_pre($args){
+function var_dump_pre($args, $isDie = false){
 	echo '<pre>';
 	var_dump($args);
 	echo '</pre>';
+	if ($isDie){
+		die;
+	}
 }
 
 if (!function_exists('print_r_pre')){
@@ -41,6 +44,15 @@ if (!function_exists('view')){
 		ob_start();
 		include AXSHORTCODES . 'tamplate/' . "$file.php";
 		return ob_get_clean();
+	}
+}
+
+if (!function_exists('userIsAdmin')){
+	function userIsAdmin(){
+		if( current_user_can( 'administrator') ){
+			return true;
+		}
+		return false;
 	}
 }
 

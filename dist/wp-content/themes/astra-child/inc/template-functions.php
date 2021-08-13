@@ -15,3 +15,7 @@ add_filter( 'body_class', 'makee_body_classes' );
 function axCheckOption($check){
 	return in_array($check, axGetOption('option_check'));
 }
+
+function axCheckACF($check){
+	return in_array(trim($check), get_field('option_check'));
+}

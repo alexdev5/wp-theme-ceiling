@@ -28,6 +28,8 @@ function ax_post_grid( $atts ){
 
 		'last_header_text' => '',
 		'last_content_text' => '',
+		'more_text' => '',
+		'less_text' => '',
 
 		'col' => '4',
 		'btn_text' => 'Заказать',
@@ -73,6 +75,10 @@ function ax_post_grid( $atts ){
 		$currPage = $atts['num'] * ($currPage-1);
 		$args['types_purpose'] = $cats;
 	}
+
+	$numPosts = (int)$atts['num'];
+	if ($numPosts>=$postAll)
+		$numPosts = $postAll;
 
 	// Подключить пост если ничего не найдено
 	if ($cats && $postAll == 0){

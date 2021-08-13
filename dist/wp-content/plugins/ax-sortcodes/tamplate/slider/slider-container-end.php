@@ -1,5 +1,6 @@
 
 		</div>
-        <?=  view('slider/slider-navigate'); ?>
+
+        <?=  view('slider/slider-navigate', ['data'=>$data]); ?>
 	</div>
 </div>

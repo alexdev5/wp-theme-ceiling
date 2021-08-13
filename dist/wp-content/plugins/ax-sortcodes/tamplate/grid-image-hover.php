@@ -6,8 +6,9 @@
 ];
 
 $last = 1;
+
 if ($atts['isnt_last']){
-	$last = (int)$atts['num'] - $count;
+	$last = $numPosts - $count;
 }
 ?>
 
@@ -38,12 +39,20 @@ if ($atts['isnt_last']){
                   <?php echo $atts['btn_text'] ?>
                 </button>
             </div>
+
         <? else: ?>
-            <a class="block-last" href="<?php echo $atts['our_work_link'] ?>">
-                <span>
-                    <?php echo $atts['last_link_text'] ?>
-                </span>
-            </a>
+            <div class="hover-block--btns">
+                <a class="block-last show-more" href="#">
+                    <span>
+                        <?php echo $atts['more_text'] ?>
+                    </span>
+                </a>
+                <a class="block-last show-less" href="#">
+                    <span>
+                        <?php echo $atts['less_text'] ?>
+                    </span>
+                </a>
+            </div>
         <? endif; ?>
 
         <!-- Video -->

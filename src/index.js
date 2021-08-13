@@ -8,6 +8,7 @@ import modalInit from "@js/modal";
 import filterInit from "@js/filter";
 import typeViewInit from "@js/view-type";
 import slidersInit from "@js/sliders";
+import homeInit from "@js/home";
 
 window.addEventListener('load', function () {
   modalInit();
@@ -16,6 +17,7 @@ window.addEventListener('load', function () {
   typeViewInit();
   slidersInit();
   videoPlayerBg();
+  homeInit();
 });
 
 function showFullText() {
@@ -40,6 +42,9 @@ function videoPlayerBg() {
   },1000);
 }
 
+/**
+ *
+ * */
 
 
 

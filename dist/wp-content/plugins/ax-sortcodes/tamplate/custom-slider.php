@@ -1,7 +1,7 @@
 <? // shortcode: custom-slider.php [axslider id = <id>] ?>
 
 <?
-$sliderData = get_field('custom_slider');
+$sliderData = get_field('custom_slider', (int)get_the_ID());
 $disableMobile = get_field('disable_mobile')[0];
 
 
@@ -10,23 +10,28 @@ $disableMobile = get_field('disable_mobile')[0];
 //var_dump($sliderData);
 ?>
 
+<? //var_dump_pre($slideView, 1); ?>
+
 <? foreach ($sliderData as $key=>$slide): ?>
    <div class="swiper-slide" data-swiper-autoplay="2000">
        <?
        $imgUrl = $slide['slide_image']['url'];
        $imgWidth = $slide['slide_image']['width'];
        $imgHeight = $slide['slide_image']['height'];
-       ?>
 
-       <? if ($imgUrl): ?>
+       $typeSlider = get_field('type_slider');
 
-      <img data-src="<?=$imgUrl ?>" class="swiper-lazy" alt="" data-src-mobile="<?=$imgUrl ?>" width="<?= $imgWidth ?>" height="<?= $imgHeight ?>">
-          <div class="swiper-lazy-preloader"></div>
-      <? elseif($slide['slide_video']): ?>
-           <? echo $slide['slide_video'] ?>
-           <div class="media-header">
-                 <? echo $slide['slide_header'] ?>
-           </div>
-      <? endif; ?>
-       </div>
-<? endforeach; ?>
+       /** Types:
+         *  side_by_side
+         *  change_img_only
+         *  default
+         */
+      $file =  AXSHORTCODES . 'tamplate/custom-slider-type/'.$typeSlider.'.php';
+
+      if(file_exists($file)){
+         require $file;
+      } else{
+         require AXSHORTCODES . 'tamplate/custom-slider-type/default.php';;
+      } ?>
+   </div>
+<?endforeach; ?>

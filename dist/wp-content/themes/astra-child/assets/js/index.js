@@ -805,57 +805,57 @@ __webpack_require__.r(__webpack_exports__);
     $el.parent().find('.swiper-lazy-preloader').remove();
   }); //
 
-  portfolioSlider();
   sliderSlider();
+  portfolioSlider();
   setPortfolioSliderMobile();
   /*
   */
 }
 
 function portfolioSlider() {
-  new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.default('.portfolio-slider .swiper-container', {
-    slidesPerView: "auto",
-    spaceBetween: 35,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      pauseOnMouseEnter: true
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true // type: "progressbar",
+  var sliders = document.querySelectorAll('.portfolio-slider .swiper-container');
+  if (!sliders) return; //
 
-    },
-    navigation: {
-      nextEl: '.axslider-button--next',
-      prevEl: '.axslider-button--prev'
-    } // And if we need scrollbar
-
-    /*scrollbar: {
-      el: '.swiper-scrollbar',
-    },*/
-    // Responsive breakpoints
-
-    /*breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 20
+  sliders.forEach(function (el) {
+    var elSetting = _inc_libs__WEBPACK_IMPORTED_MODULE_0__.getJsonData(el.dataset.settings);
+    var data = {
+      slidesPerView: "auto",
+      spaceBetween: 35,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
       },
-      // when window width is >= 480px
-      480: {
-        slidesPerView: 3,
-        spaceBetween: 30
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true // type: "progressbar",
+
       },
-      // when window width is >= 640px
-      640: {
-        slidesPerView: 4,
-        spaceBetween: 40
+      navigation: {
+        nextEl: '.axslider-button--next',
+        prevEl: '.axslider-button--prev'
+      },
+      breakpoints: {
+        // when window width is >= 640px
+        720: {
+          slidesPerView: 'auto',
+          spaceBetween: 40
+        }
       }
-    },*/
-
+    };
+    data.slidesPerView = elSetting.slidesPerView;
+    data.spaceBetween = elSetting.spaceBetween;
+    data.breakpoints['720'].slidesPerView = elSetting.slidesPerView;
+    data.breakpoints['720'].spaceBetween = elSetting.spaceBetween;
+    new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.default(el, data);
   });
 }
+/**
+ * Post type = sliders
+ * Для кастомного типа поста
+ * */
+
 
 function sliderSlider() {
   var sliders = document.querySelectorAll('.sliders .swiper-container');
@@ -897,10 +897,15 @@ function sliderSlider() {
         }
       }
     };
+    var assign = Object.assign(data, elSetting);
 
     if (getKey(elSetting, 'slidesPerView')) {
-      data.breakpoints['720'].slidesPerView = parseInt(getKey(elSetting, 'slidesPerView'));
-      data.breakpoints['576'].slidesPerView = 3;
+      assign.breakpoints['720'].slidesPerView = parseInt(getKey(elSetting, 'slidesPerView'));
+      assign.breakpoints['576'].slidesPerView = 3;
+    }
+
+    if (getKey(elSetting, 'disableOnInteraction')) {
+      assign.autoplay.disableOnInteraction = getKey(elSetting, 'disableOnInteraction');
     }
 
     if (elSetting.disableMobile && XS > WIDTH_SCREEN) {
@@ -908,7 +913,7 @@ function sliderSlider() {
       parents.find('.swiper-slide').addClass('no-swiper-slide').removeClass('swiper-slide');
       parents.find('.swiper-wrapper').addClass('no-swiper-wrapper').removeClass('swiper-wrapper');
     } else {
-      new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.default(el, data);
+      new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.default(el, assign);
     }
   });
 }
@@ -13472,7 +13477,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1627076874851
+      // 1628770225415
       var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"publicPath":"./dist/","locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -33270,7 +33275,7 @@ webpackContext.id = "../node_modules/webpack/hot sync ^\\.\\/log$";
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("514908d1fafdb83ca7c0")
+/******/ 		__webpack_require__.h = () => ("cf5f07311805bb86ba1c")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

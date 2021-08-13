@@ -859,6 +859,13 @@ button.btn-callback{
   }
 }
 
+// --
+.grid-image-hover{
+  .post-grid-item--hidden{
+    display: none;
+  }
+}
+
 /* На странице виды потолков */
 /* view='grid-image' */
 .mt-150{
@@ -1338,8 +1345,43 @@ button.btn-callback{
     }
   }
 
-  .button{
+  .images{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 160px;
 
+    @include md-block{
+      display: none;
+    }
+    &-item{
+      img{
+        box-shadow: 0px 0px 15px 0px rgb(0,0,0, .2);
+      }
+      &:nth-child(1){
+        padding-right:15px;
+      }
+      &:nth-child(2){
+        padding-left: 15px;
+      }
+      &:last-child{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+      }
+    }
+    //
+    +.img-one{
+      display: none;
+
+      @include md-block{
+        display: block;
+      }
+    }
   }
 }
 
