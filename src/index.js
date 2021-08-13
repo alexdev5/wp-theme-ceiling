@@ -16,8 +16,9 @@ window.addEventListener('load', function () {
   filterInit();
   typeViewInit();
   slidersInit();
-  videoPlayerBg();
+  // show more type celling
   homeInit();
+  videoPlayerBg();
 });
 
 function showFullText() {

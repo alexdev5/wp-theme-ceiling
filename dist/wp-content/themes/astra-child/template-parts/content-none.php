@@ -36,8 +36,27 @@
 
 			<p><?php echo esc_html( astra_default_strings( 'string-search-nothing-found-message', false ) ); ?></p>
 		<?php else : ?>
-
-			<p><?php echo esc_html( astra_default_strings( 'string-content-nothing-found-message', false ) ); ?></p>
+      <? $args = [
+            'post_type' => 'ceilings',
+            'numberposts'=> 1,
+            'suppress_filters'=> false,
+            'orderby' => 'date',
+            'posts_per_page' => 1,
+            'tax_query'      => array(
+               array(
+                  'taxonomy' => 'types_purpose',
+                  'terms' => array('no'),
+                  'field' => 'slug',
+                  'operator' => 'IN',
+               ),
+            )
+         ];
+         $wp_query = new WP_Query($args);
+				while ( $wp_query->have_posts() ){
+					$wp_query->the_post();
+					require __DIR__ . '/inc/celling-no-content.php';
+				}
+         ?>
 
 		<?php endif; ?>
 

@@ -1,6 +1,6 @@
 
 		</div>
-
-        <?=  view('slider/slider-navigate', ['data'=>$data]); ?>
+        <?= view('slider/slider-navigate', ['data'=>$data]); ?>
 	</div>
 </div>
+

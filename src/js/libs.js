@@ -1,6 +1,6 @@
 // Вернуть данные с елемента
 export function getFormDataJSON($parent) {
-  let data = $parent.find('.data-js').text();
+  let data = $parent.find('.data-js')?.text();
   if (data){
     data = JSON.parse(data);
   } else {
@@ -8,6 +8,8 @@ export function getFormDataJSON($parent) {
   }
   return data;
 }
+
+
 
 /* libs */
 export function sendAjax(module, token, func, form, type) {

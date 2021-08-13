@@ -14,6 +14,8 @@ function ax_post_grid( $atts ){
 	$_exclude = [];
 	$atts = shortcode_atts( array(
 		'num' => 6,
+		// Количество отображаемых, остальные скрыть
+		'per_view' => 5,
 		'view' => 'grid-image-hover',
 		'is_nav' => 1,
 
@@ -23,6 +25,8 @@ function ax_post_grid( $atts ){
 		'our_work_link_text' => '',
 		// Показывать последний блок как ссылку на все записи
 		'isnt_last' => '',
+		// Показать больше/скрыть
+		'more_btns' => '',
 		// текст последнего блока, если есть
 		'last_link_text' => '',
 

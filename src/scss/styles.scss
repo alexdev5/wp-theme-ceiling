@@ -626,6 +626,10 @@ button.btn-callback{
     }
   }
 
+  &--hidden{
+    display: none;
+  }
+
   &--video{
     position: absolute;
     width: 100%;
@@ -809,6 +813,25 @@ button.btn-callback{
     }
   }
 
+  // блок в сетке
+  .post-grid-last{
+    .relative{
+      @include md-block{
+        display: none;
+      }
+    }
+
+    .button{
+      background: $green;
+      color: #fff;
+      height: 46px;
+    }
+
+    &--less{
+      height: 140px;
+    }
+  }
+
   /* Последний блок, со ссылкой или заказать звонок */
   .block-last{
     font-size: 28px;
@@ -842,23 +865,23 @@ button.btn-callback{
     .button{
       color: #fff;
     }
-  }
 
-  .post-grid-last{
-    .relative{
-      @include md-block{
-        display: none;
-      }
-    }
-
-    .button{
-      background: $green;
-      color: #fff;
-      height: 46px;
+    &.hidden{
+      display: none;
     }
   }
 }
 
+.celling-no-result{
+  .post-grid-item{
+    max-height: 400px;
+
+  }
+
+  .last-item-content p{
+    line-height: 30px;
+  }
+}
 // --
 .grid-image-hover{
   .post-grid-item--hidden{

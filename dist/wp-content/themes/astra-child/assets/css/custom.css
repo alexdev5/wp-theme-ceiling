@@ -1453,6 +1453,9 @@ button.btn-callback img {
 .post-grid-item {
   overflow: hidden;
 }
+.post-grid--hidden {
+  display: none;
+}
 .post-grid--video {
   position: absolute;
   width: 100%;
@@ -1614,6 +1617,19 @@ button.btn-callback img {
 .post-grid .post-grid-item-last p {
   line-height: 30px;
 }
+@media screen and (max-width: 768px) {
+  .post-grid .post-grid-last .relative {
+    display: none;
+  }
+}
+.post-grid .post-grid-last .button {
+  background: #66CB00;
+  color: #fff;
+  height: 46px;
+}
+.post-grid .post-grid-last--less {
+  height: 140px;
+}
 .post-grid .block-last {
   font-size: 28px;
   color: #fff;
@@ -1647,15 +1663,19 @@ button.btn-callback img {
 .post-grid .block-last .button {
   color: #fff;
 }
-@media screen and (max-width: 768px) {
-  .post-grid .post-grid-last .relative {
-    display: none;
-  }
+.post-grid .block-last.hidden {
+  display: none;
 }
-.post-grid .post-grid-last .button {
-  background: #66CB00;
-  color: #fff;
-  height: 46px;
+
+.celling-no-result .post-grid-item {
+  max-height: 400px;
+}
+.celling-no-result .last-item-content p {
+  line-height: 30px;
+}
+
+.grid-image-hover .post-grid-item--hidden {
+  display: none;
 }
 
 /* На странице виды потолков */
