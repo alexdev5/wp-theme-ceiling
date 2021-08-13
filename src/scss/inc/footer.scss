@@ -39,6 +39,10 @@
     }
   }
 
+  .site-footer-primary-section-4{
+    display: none;
+  }
+
   .site-footer-primary-section-3{
 
     @include xl-block{
@@ -98,6 +102,14 @@
     @include xl-block{
       display: none!important;
     }
+
+    .ast-builder-html-element{
+      width: 100% !important;
+    }
+  }
+
+  .ast-builder-grid-row-5-equal .ast-builder-grid-row {
+    grid-template-columns: repeat( 4,1fr );
   }
 }
 
@@ -111,6 +123,8 @@
   color: #fff;
 }
 .site-primary-footer-wrap{
+  padding-top: 19px;
+  padding-bottom: 6px;
   @include lg-block{
     padding-bottom: 0;
   }
@@ -134,7 +148,7 @@
   grid-column-gap: 15px
 }
 .site-footer-primary-section-3{
-  padding-left: 18%;
+ // padding-left: 18%;
 }
 
 .wpml-ls-legacy-list-horizontal{

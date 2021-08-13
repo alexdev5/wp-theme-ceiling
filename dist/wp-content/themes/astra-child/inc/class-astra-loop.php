@@ -210,7 +210,6 @@ if ( ! class_exists( 'Astra_Loop' ) ) :
 
 					endwhile;
 
-
 					do_action( 'astra_template_parts_content_bottom' );
 					else :
 						do_action( 'astra_template_parts_content_none' );

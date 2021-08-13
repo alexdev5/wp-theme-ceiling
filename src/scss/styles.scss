@@ -50,7 +50,7 @@ a{
   }
 
   h1{
-    font-size: 52px;
+    font-size: 45px;
     font-weight: 700;
     margin-bottom: 15px;
 
@@ -1319,6 +1319,15 @@ button.btn-callback{
   display: none;
 }
 
+.first-block{
+  h2{
+    font-weight: 600;
+    font-size: 1.7rem;
+  }
+  h2, h2.mb-0, .mb-0{
+    margin-bottom: 0!important;
+  }
+}
 /* Portfolio */
 .portfolio-grid > div{
   &:nth-child(odd){
